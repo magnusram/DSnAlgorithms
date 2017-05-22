@@ -2,6 +2,28 @@
  * Two Singly linked list having one common node.  
  * Find the common node.
  */
+
+/*
+Algorithm:
+1) Find the heights of L1 and L2
+2) While doing the above step, also compare if the current node and next node are equal
+3) If 2) passes, then common node is found. So, break out of the loop (this means that both L1 and L2 are of same height)
+4) Else, proceed till the end to find the heights
+5) Once the height is known, calculate the height difference and traverse the larger one till reaching the same height as 
+shorter list
+6) Now, carry out step 3 and find the common node and break out of the loop
+ 
+Worst case running time calculation:
+
+Worst case: Common node is at the position END-1
+
+1) Find the height of L1 = n
+2) Find the height of L2 = n
+3) Traverse the taller list till it reaches the same height as the shorter list = n
+4) Traverse L1 and L2 (For node comparison) = 2n
+
+= 5n = O(n) running time
+*/
 public class CommonNode {
 
 	public static void main(String[] args) {
